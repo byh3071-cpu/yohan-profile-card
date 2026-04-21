@@ -1,0 +1,41 @@
+import type { ProfileSummary, ProjectItem, StackItem } from "@/types"
+
+/** 메인 프로필 (DB 연동 전 정적 SoT) */
+export const STATIC_PROFILE: ProfileSummary = {
+  displayName: "백요한",
+  tagline: "AI 기반 1인 기업 준비 중인 바이브코더",
+  avatarSrc: "/avatar.svg",
+}
+
+/** 기술 스택 태그 (표시 순서 고정) */
+export const STATIC_STACK: StackItem[] = [
+  { label: "Cursor" },
+  { label: "Claude" },
+  { label: "Next.js" },
+  { label: "Supabase" },
+  { label: "n8n" },
+  { label: "Notion" },
+  { label: "TypeScript" },
+]
+
+/** 프로젝트 카드 (추후 Supabase로 대체 가능) */
+export const STATIC_PROJECTS: ProjectItem[] = [
+  {
+    id: "proj-ai-dictionary",
+    title: "AI 사전 뷰어",
+    description: "노션 DB 기반 AI 용어 사전 웹앱",
+    href: "#",
+  },
+  {
+    id: "proj-youtube-summary",
+    title: "유튜브 요약봇",
+    description: "n8n + OpenAI로 유튜브 영상 자동 요약",
+    href: "#",
+  },
+  {
+    id: "proj-yohan-os",
+    title: "요한 OS",
+    description: "노션 기반 AI 1인기업 운영 시스템",
+    href: "#",
+  },
+]
