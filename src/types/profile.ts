@@ -16,6 +16,6 @@ export type ProjectItem = {
   id: string
   title: string
   description: string
-  /** 외부 링크 또는 앵커 */
-  href: string
+  /** 비어 있으면 카드가 "준비 중" 비활성 상태로 렌더링됨 */
+  href?: string
 }
