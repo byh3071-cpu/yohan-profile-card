@@ -1,12 +1,14 @@
 import Image from "next/image"
-import type { ProfileSummary } from "@/types/profile"
+import type { ProfileSummary, SocialLink } from "@/types/profile"
+import { SocialLinks } from "@/components/SocialLinks"
 
 type ProfileHeaderProps = {
   profile: ProfileSummary
+  socialLinks?: SocialLink[]
 }
 
-/** 이름 + 한 줄 소개 + 프로필 이미지 */
-export function ProfileHeader({ profile }: ProfileHeaderProps) {
+/** 이름 + 한 줄 소개 + 프로필 이미지 + (옵션) 소셜 링크 */
+export function ProfileHeader({ profile, socialLinks }: ProfileHeaderProps) {
   return (
     <header className="flex flex-col items-center gap-4 text-center sm:flex-row sm:items-center sm:text-left">
       <div className="relative h-28 w-28 overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 shadow-lg shadow-black/40 ring-1 ring-white/5">
@@ -20,10 +22,11 @@ export function ProfileHeader({ profile }: ProfileHeaderProps) {
           unoptimized
         />
       </div>
-      <div className="space-y-2">
-        <p className="text-xs font-medium uppercase tracking-[0.2em] text-zinc-500">Profile</p>
+      <div className="space-y-3">
+        <p className="text-xs font-medium uppercase tracking-[0.2em] text-zinc-400">Profile</p>
         <h1 className="text-3xl font-semibold tracking-tight text-zinc-50">{profile.displayName}</h1>
-        <p className="max-w-xl text-base leading-relaxed text-zinc-400">{profile.tagline}</p>
+        <p className="max-w-xl text-base leading-relaxed text-zinc-300">{profile.tagline}</p>
+        {socialLinks && socialLinks.length > 0 ? <SocialLinks items={socialLinks} /> : null}
       </div>
     </header>
   )

@@ -11,6 +11,16 @@ export type StackItem = {
   label: string
 }
 
+/** 지원하는 소셜 링크 종류. 아이콘·기본 라벨이 이 값에 따라 결정됨 */
+export type SocialKind = "github" | "email" | "x" | "linkedin" | "blog"
+
+/** 프로필 헤더에 노출되는 외부 링크. `href`가 비어 있으면 렌더링하지 않음 */
+export type SocialLink = {
+  kind: SocialKind
+  /** GitHub/X/LinkedIn/Blog는 https URL, email은 `mailto:` */
+  href: string
+}
+
 /** 프로젝트 카드 한 장 */
 export type ProjectItem = {
   id: string

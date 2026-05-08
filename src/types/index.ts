@@ -1,1 +1,1 @@
-export type { ProfileSummary, StackItem, ProjectItem } from "@/types/profile"
+export type { ProfileSummary, StackItem, ProjectItem, SocialKind, SocialLink } from "@/types/profile"

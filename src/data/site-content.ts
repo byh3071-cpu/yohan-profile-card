@@ -1,4 +1,4 @@
-import type { ProfileSummary, ProjectItem, StackItem } from "@/types"
+import type { ProfileSummary, ProjectItem, SocialLink, StackItem } from "@/types"
 
 /** 메인 프로필 (DB 연동 전 정적 SoT) */
 export const STATIC_PROFILE: ProfileSummary = {
@@ -6,6 +6,18 @@ export const STATIC_PROFILE: ProfileSummary = {
   tagline: "AI 기반 1인 기업 준비 중인 바이브코더",
   avatarSrc: "/avatar.svg",
 }
+
+/**
+ * 소셜 링크 (표시 순서 고정). `href`를 채우면 자동 노출, 비어 있으면 미렌더.
+ * 모바일에서 이 파일만 열어 한 줄씩 채우면 됨.
+ */
+export const STATIC_SOCIAL_LINKS: SocialLink[] = [
+  { kind: "github", href: "" },
+  { kind: "email", href: "" },
+  { kind: "blog", href: "" },
+  { kind: "x", href: "" },
+  { kind: "linkedin", href: "" },
+]
 
 /** 기술 스택 태그 (표시 순서 고정) */
 export const STATIC_STACK: StackItem[] = [
