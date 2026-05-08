@@ -21,6 +21,9 @@ export type SocialLink = {
   href: string
 }
 
+/** 프로젝트 진행 상태 (카드 우상단 뱃지 색·라벨이 결정됨) */
+export type ProjectStatus = "live" | "wip" | "draft"
+
 /** 프로젝트 카드 한 장 */
 export type ProjectItem = {
   id: string
@@ -28,4 +31,8 @@ export type ProjectItem = {
   description: string
   /** 비어 있으면 카드가 "준비 중" 비활성 상태로 렌더링됨 */
   href?: string
+  /** 사용 기술 스택 — 카드 하단에 작은 칩으로 표시. 비어 있으면 미렌더 */
+  stack?: string[]
+  /** 진행 상태 — 미지정 시 뱃지 미표시 */
+  status?: ProjectStatus
 }

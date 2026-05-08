@@ -36,15 +36,21 @@ export const STATIC_PROJECTS: ProjectItem[] = [
     id: "proj-ai-dictionary",
     title: "AI 사전 뷰어",
     description: "노션 DB 기반 AI 용어 사전 웹앱",
+    stack: ["Next.js", "Notion API", "TypeScript"],
+    status: "wip",
   },
   {
     id: "proj-youtube-summary",
     title: "유튜브 요약봇",
     description: "n8n + OpenAI로 유튜브 영상 자동 요약",
+    stack: ["n8n", "OpenAI", "Webhook"],
+    status: "wip",
   },
   {
     id: "proj-yohan-os",
     title: "요한 OS",
     description: "노션 기반 AI 1인기업 운영 시스템",
+    stack: ["Notion", "Claude", "Cursor"],
+    status: "draft",
   },
 ]
