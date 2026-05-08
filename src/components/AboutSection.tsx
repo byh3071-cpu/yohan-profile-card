@@ -9,8 +9,8 @@ export function AboutSection({ paragraphs }: AboutSectionProps) {
 
   return (
     <section aria-label="About" className="space-y-3">
-      <h2 className="text-sm font-semibold text-zinc-300">About</h2>
-      <div className="max-w-2xl space-y-3 text-sm leading-relaxed text-zinc-300">
+      <h2 className="text-sm font-semibold text-zinc-700 dark:text-zinc-300">About</h2>
+      <div className="max-w-2xl space-y-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
         {visible.map((p, i) => (
           <p key={i}>{p}</p>
         ))}

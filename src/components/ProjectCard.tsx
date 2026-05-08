@@ -7,15 +7,18 @@ type ProjectCardProps = {
 const STATUS_META: Record<ProjectStatus, { label: string; className: string }> = {
   live: {
     label: "Live",
-    className: "border-emerald-400/30 bg-emerald-400/10 text-emerald-300",
+    className:
+      "border-emerald-500/40 bg-emerald-500/10 text-emerald-700 dark:border-emerald-400/30 dark:bg-emerald-400/10 dark:text-emerald-300",
   },
   wip: {
     label: "WIP",
-    className: "border-amber-400/30 bg-amber-400/10 text-amber-300",
+    className:
+      "border-amber-500/40 bg-amber-500/10 text-amber-700 dark:border-amber-400/30 dark:bg-amber-400/10 dark:text-amber-300",
   },
   draft: {
     label: "Draft",
-    className: "border-zinc-400/30 bg-zinc-400/10 text-zinc-300",
+    className:
+      "border-zinc-400/40 bg-zinc-400/10 text-zinc-600 dark:border-zinc-400/30 dark:bg-zinc-400/10 dark:text-zinc-300",
   },
 }
 
@@ -28,10 +31,10 @@ export function ProjectCard({ project }: ProjectCardProps) {
   const stack = project.stack?.filter((s) => s.trim().length > 0) ?? []
 
   return (
-    <article className="group flex h-full flex-col justify-between rounded-2xl border border-white/10 bg-zinc-900/60 p-5 shadow-lg shadow-black/30 ring-1 ring-white/5 transition hover:-translate-y-0.5 hover:border-sky-500/40 hover:shadow-sky-900/20">
+    <article className="group flex h-full flex-col justify-between rounded-2xl border border-zinc-200 bg-white p-5 shadow-lg shadow-zinc-900/10 ring-1 ring-zinc-900/5 transition hover:-translate-y-0.5 hover:border-sky-500/40 hover:shadow-sky-200/40 dark:border-white/10 dark:bg-zinc-900/60 dark:shadow-black/30 dark:ring-white/5 dark:hover:shadow-sky-900/20">
       <div className="space-y-3">
         <div className="flex items-start justify-between gap-3">
-          <h3 className="text-lg font-semibold text-zinc-50">{project.title}</h3>
+          <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-50">{project.title}</h3>
           {status ? (
             <span
               className={`shrink-0 rounded-full border px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider ${status.className}`}
@@ -40,13 +43,15 @@ export function ProjectCard({ project }: ProjectCardProps) {
             </span>
           ) : null}
         </div>
-        <p className="text-sm leading-relaxed text-zinc-300">{project.description}</p>
+        <p className="text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
+          {project.description}
+        </p>
         {stack.length > 0 ? (
           <ul className="flex flex-wrap gap-1.5 pt-1">
             {stack.map((tag) => (
               <li
                 key={tag}
-                className="rounded-full border border-white/10 bg-white/5 px-2 py-0.5 text-[11px] text-zinc-300"
+                className="rounded-full border border-zinc-200 bg-zinc-50 px-2 py-0.5 text-[11px] text-zinc-700 dark:border-white/10 dark:bg-white/5 dark:text-zinc-300"
               >
                 {tag}
               </li>
@@ -60,7 +65,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             href={href}
             target={isExternal ? "_blank" : undefined}
             rel={isExternal ? "noopener noreferrer" : undefined}
-            className="inline-flex items-center gap-2 rounded-md text-sm font-medium text-sky-300 transition hover:text-sky-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400/70 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950"
+            className="inline-flex items-center gap-2 rounded-md text-sm font-medium text-sky-700 transition hover:text-sky-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400/70 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:text-sky-300 dark:hover:text-sky-200 dark:focus-visible:ring-offset-zinc-950"
           >
             링크 열기
             <span aria-hidden className="transition group-hover:translate-x-0.5">

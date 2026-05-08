@@ -1,6 +1,16 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
+  color-scheme: light;
+  --background: #fafafa;
+  --foreground: #18181b;
+  --card: #ffffff;
+  --muted: #71717a;
+}
+
+.dark {
   color-scheme: dark;
   --background: #050507;
   --foreground: #e4e4e7;
@@ -17,8 +27,13 @@
 
 body {
   min-height: 100vh;
-  background: radial-gradient(1200px 600px at 20% -10%, rgba(56, 189, 248, 0.12), transparent 55%),
-    radial-gradient(900px 500px at 90% 0%, rgba(168, 85, 247, 0.12), transparent 50%), var(--background);
+  background: radial-gradient(1200px 600px at 20% -10%, rgba(56, 189, 248, 0.06), transparent 55%),
+    radial-gradient(900px 500px at 90% 0%, rgba(168, 85, 247, 0.05), transparent 50%), var(--background);
   color: var(--foreground);
   font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+}
+
+.dark body {
+  background: radial-gradient(1200px 600px at 20% -10%, rgba(56, 189, 248, 0.12), transparent 55%),
+    radial-gradient(900px 500px at 90% 0%, rgba(168, 85, 247, 0.12), transparent 50%), var(--background);
 }
