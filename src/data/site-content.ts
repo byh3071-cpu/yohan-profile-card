@@ -8,6 +8,12 @@ export const STATIC_PROFILE: ProfileSummary = {
 }
 
 /**
+ * About 본문 — 한 항목이 한 단락. 비우면 섹션이 자동으로 숨김.
+ * 모바일에서 이 배열에 문장만 추가하면 노출됨.
+ */
+export const STATIC_BIO: string[] = []
+
+/**
  * 소셜 링크 (표시 순서 고정). `href`를 채우면 자동 노출, 비어 있으면 미렌더.
  * 모바일에서 이 파일만 열어 한 줄씩 채우면 됨.
  */
