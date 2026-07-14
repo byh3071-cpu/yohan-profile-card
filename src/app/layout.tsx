@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "백요한 — 프로필 카드",
+  title: "요한 — 프로필 카드",
   description: "AI 기반 1인 기업 준비 중인 바이브코더의 프로필 카드",
 }
 

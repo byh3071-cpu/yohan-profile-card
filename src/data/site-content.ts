@@ -2,7 +2,7 @@ import type { ProfileSummary, ProjectItem, StackItem } from "@/types"
 
 /** 메인 프로필 (DB 연동 전 정적 SoT) */
 export const STATIC_PROFILE: ProfileSummary = {
-  displayName: "백요한",
+  displayName: "요한",
   tagline: "AI 기반 1인 기업 준비 중인 바이브코더",
   avatarSrc: "/avatar.svg",
 }
